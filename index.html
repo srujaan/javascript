@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Coding train: data/api 1</title>
+    </head>
+    <body>
+        <img src="" id="rainbow"/>
+        <script>
+            console.log('fetching a rainbow');
+            fetch('rainbow.jpg').then(response => {
+                console.log(response);
+                return response.blob();
+
+            }).then(response => {
+                console.log(response);
+                document.getElementById('rainbow').src = URL.createObjectURL(response);
+
+            });
+        </script>
+    </body>
+</html>
