@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>graphing NASA data</title>
+    <script>src = "https://cdn.jsdelivr.net/npm/chart.js@2.8.0"</script>
+</head>
+
+<body>
+    <h1>Global avg temperature</h1>
+    <canvas id="mychart"></canvas>
+    <script>
+        window.addEventListener('load', setup);
+
+        async function setup() {
+
+            let ctx = document.getElementById('mychart').getContext('2d');
+            //let dataTemps = await getData();
+            let okchart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dataTemps.years,
+                    datasets: [
+                        {
+                            label: ['J','F','M','A','Ma','J'],
+                            data: [0,10,5,20,30,45],
+                            fill: false,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderWidth: 1
+                        },
+                        
+                    ]
+                },
+                options: {}
+            });
+        }
+
+         /*async function getData(){
+            const response = await fetch
+
+         }*/
+        
+
+    </script>
+</body>
+
+</html>
