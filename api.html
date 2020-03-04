@@ -11,7 +11,9 @@
     <h1>Where is the ISS</h1>
 
     <p>latitude:<span id = "lat"></span><br />
-        longitude:<span id = "long"></span><br</p>
+        longitude:<span id = "long"></span><br />
+        velocity:<span id = "vet"></span><br />
+    </p>
     <script>
         const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
         async function getIss(){
@@ -19,12 +21,14 @@
             const data = await response.json();
             //console.log(data.latitude);
             //console.log(data.longitude);
-            const {latitude, longitude} = data;
+            const {latitude, longitude, velocity} = data;
             document.getElementById('lat').textContent = latitude;
             document.getElementById('long').textContent = longitude;
+            document.getElementById('vet').textContent = velocity;
 
             console.log(latitude);
             console.log(longitude);
+            console.log(velocity);
         }
 
         getIss();
